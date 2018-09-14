@@ -18,20 +18,26 @@ except (Exception):
 def make_output():
     os.system(f"gcc {FILENAME} -o {FILENAME}.out")
     for i in range(1,TESTCASE+1):
-        #os.system(f"./{FILENAME}.out < {i}.in > test_{i}.out.tmp")
-        os.system(f"./{FILENAME}.out < {INPUT_PATH}/{i}.in")
+        os.system(f"./{FILENAME}.out < {INPUT_PATH}/{i}.in > test_{i}.out.tmp")
+        #### temp of use
+        #os.system(f"cat {INPUT_PATH}/{i}.in") 
+        #os.system(f"./{FILENAME}.out < {INPUT_PATH}/{i}.in")
 
 def clear_output():
     for i in range(1,TESTCASE+1):
         os.system(f"rm test_{i}.out.tmp")
     os.system(f"rm {FILENAME}.out")
-"""
-def check_output(id):
+
+def check_output():
     result = []
     for i in range(1,TESTCASE+1):
-        std_output = open(f"std{id:02d}_{i}.out.tmp",'r').read().strip()
+        std_output = open(f"test_{i}.out.tmp",'r').read().strip()
         print(f"Testcase {i}")
-        print("STD output   :",std_output)
+        print("Testcase input:")
+        os.system(f"cat {INPUT_PATH}/{i}.in")  
+        print("Program output:")
+        print(std_output)
+        """
         if std_output == ANS[i-1]:
             result.append('P')
         elif std_output.replace(' ','') == ANS[i-1].replace(' ',''):
@@ -39,10 +45,12 @@ def check_output(id):
         else:
             result.append('-')
             print("Answer       :",ANS[i-1])
+        """
         print("...........................................")
     for i in result:
         print(i,end='')
     print()
-"""
+
 make_output()
-#clear_output()
+check_output()
+clear_output()
