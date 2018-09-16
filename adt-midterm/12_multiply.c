@@ -16,6 +16,8 @@ int myAddition(int x,int y)
     else
         return x;
 }
+
+//==============================
 int mySubtract(int x, int y)
 {
    if(y > 0)
@@ -34,6 +36,8 @@ int myMultiplication(int x,int y)
     else
         return 0;
 }
+
+//==============================
 
 int main()
 {
