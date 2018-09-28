@@ -16,9 +16,10 @@ typedef struct myStruct
 int main()
 {
     //type_abc * p[50] = (type_abc *)malloc(sizeof(type_abc));
-    type_abc *p = (type_abc *)calloc(sizeof(type_abc), 50);
+    //type_abc *p = (type_abc *)calloc(sizeof(type_abc), 50);
+    type_abc *p = (type_abc *)malloc(sizeof(type_abc) * 50);
     printf("sizeof(p) = %d\n", sizeof(*p));
     printf("p[13] -> myInfo[2] -> name is %d(250 added)\n", (int)&p[13].myInfo[2].name - (int)&p[0] + 250);
-    printf("p[21] -> myData[12] -> myString[18] is %d(250 added)\n", (int)&p[21].myData[12].myString[18] - (int)&p[0] + 250);
+    printf("p[21] -> myData[12] -> myStrng[18] is %d(250 added)\n", (int)&p[21].myData[12].myString[18] - (int)&p[0] + 250);
     return 0;
 }
