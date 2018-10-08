@@ -1,15 +1,7 @@
 import time
 
 def calTime(sec):
-    hr = 0
-    mn = 0
-    while(sec>=3600):
-        hr += 1
-        sec -= 3600
-    while(mn>=60):
-        mn += 1
-        sec -= 60
-    return [hr, mn, sec]
+    return timeAdd([0,0,sec],[0,0,0])
 
 def inputFirstTick():
     print("Tell me what time is your first 'Tick'?")
@@ -56,7 +48,7 @@ print("This is your Tick time table . . .")
 print(f"Tick No.      Hour:Minute:Second")
 for i in range(len(ans)):
     print(f"{i:3d}             {ans[i][0]:02d}:{ans[i][1]:02d}:{ans[i][2]:02d}")
-tick = input("For copy to Google sheet press Y/y").lower()
+tick = input("For copy to Google sheet press Y/y ").lower()
 if(tick=='y'):
     print("Hour")
     for i in range(len(ans)):
