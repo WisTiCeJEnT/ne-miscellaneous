@@ -53,4 +53,17 @@ for i in range(len(ans)-1):
         if(j==len(ans)):
             break
 print("This is your Tick time table . . .")
-
+print(f"Tick No.      Hour:Minute:Second")
+for i in range(len(ans)):
+    print(f"{i:3d}             {ans[i][0]:02d}:{ans[i][1]:02d}:{ans[i][2]:02d}")
+tick = input("For copy to Google sheet press Y/y").lower()
+if(tick=='y'):
+    print("Hour")
+    for i in range(len(ans)):
+        print(f"{ans[i][0]:02d}")
+    print("Minute")
+    for i in range(len(ans)):
+        print(f"{ans[i][1]:02d}")
+    print("Second")
+    for i in range(len(ans)):
+        print(f"{ans[i][2]:02d}")
