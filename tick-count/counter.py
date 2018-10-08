@@ -18,15 +18,15 @@ def inputFirstTick():
 def timeAdd(t1,t2):
     res = [0,0,0]
     res[2] = t1[2] + t2[2]
-    if res[2]>=60:
+    while res[2]>=60:
         res[2] -= 60
         res[1] += 1
     res[1] += t1[1] + t2[1]
-    if res[1]>=60:
+    while res[1]>=60:
         res[1] -= 60
         res[0] += 1
     res[0] += t1[0] + t2[0]
-    if res[0]>=24:
+    while res[0]>=24:
         res[0] -= 24
     return res
 
