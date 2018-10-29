@@ -14,23 +14,49 @@ typedef struct Header_Node {
 
 HEADER_LIST* root = NULL;
 
-void new_file(char new_file_name[128])
+int new_file(char new_file_name[128])
 {
     HEADER_LIST *n = (HEADER_LIST *)malloc(sizeof(HEADER_LIST));
     n -> next_file_ptr = NULL; 
     strcpy(n -> file_name, new_file_name);
     n -> content_ptr = NULL;
     if (root == NULL)
+    {
         root = n;
+    }
     else
     {
         HEADER_LIST *c = root;
         while(c -> next_file_ptr != NULL)
+        {
+            if(strcmp(c -> file_name, new_file_name) == 0)
+                return 1;
             c = c -> next_file_ptr;
+        }
+        if(strcmp(c -> file_name, new_file_name) == 0)
+            return 1;
         c -> next_file_ptr = n;
     }
+    return 0;
 }
 
+int rename_file(char old_file_name[128], char new_file_name[128])
+{
+    HEADER_LIST *c = root;
+    HEADER_LIST *old_file_ptr = NULL;
+    while(c != NULL)
+    {
+        if(strcmp(c -> file_name, old_file_name) == 0)
+            old_file_ptr = c;
+        if(strcmp(c -> file_name, new_file_name) == 0)
+            return 2; //New file name already exist
+        c = c -> next_file_ptr;
+    }
+    if(old_file_ptr == NULL)
+        return 1; //File not found
+    strcpy(old_file_ptr -> file_name, new_file_name);
+    return 0;
+}
 void all_file()
 {
     HEADER_LIST *c = root;
@@ -44,10 +70,16 @@ void all_file()
 int main()
 {
     //(HEADER_LIST *)malloc(sizeof(HEADER_LIST));
-    new_file("a");
-    new_file("b");
-    new_file("a1");
-    new_file("b2");
+    printf("%d\n",new_file("a"));
+    printf("%d\n",new_file("a"));
+    printf("%d\n",new_file("b"));
+    printf("%d\n",new_file("b"));
+    printf("%d\n",new_file("c"));
+    printf("%d\n",new_file("c"));
+    printf("%d\n",new_file("c"));
+    printf("%d\n",new_file("d"));
+    printf("%d\n", rename_file("a", "e"));
+    printf("%d\n", rename_file("b", "c"));
     all_file();
     return 0;
 }
