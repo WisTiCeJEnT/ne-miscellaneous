@@ -33,14 +33,11 @@ void new_file(char new_file_name[128])
 
 void all_file()
 {
-    if (root != NULL)
-    {    
-        HEADER_LIST *c = root;
-        do
-        {
-            printf("%s\n",c -> file_name);
-            c = c -> next_file_ptr;
-        }while (c != NULL);
+    HEADER_LIST *c = root;
+    while (c != NULL)
+    {
+        printf("%s\n",c -> file_name);
+        c = c -> next_file_ptr;
     }
 }
 
