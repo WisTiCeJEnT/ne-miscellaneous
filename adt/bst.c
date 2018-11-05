@@ -15,7 +15,7 @@ void print_tree(TREE_NODE* c)
     if(c != NULL)
     {
         print_tree(c -> l);
-        printf("%d\n",c -> data);
+        printf("%d %d\n",c -> data, c -> hight);
         print_tree(c -> r);
     }
 }
@@ -42,6 +42,14 @@ int insert_tree(int n)
             {
                 new_node -> p = c;
                 c -> r = new_node;
+                if(c -> l == NULL)
+                {
+                    while(c != NULL)
+                    {
+                        c -> hight += 1;
+                        c = c -> p;
+                    }
+                }
                 return 0;
             }
             else
@@ -55,6 +63,14 @@ int insert_tree(int n)
             {
                 new_node -> p = c;
                 c -> l = new_node;
+                if(c -> r == NULL)
+                {
+                    while(c != NULL)
+                    {
+                        c -> hight += 1;
+                        c = c -> p;
+                    }
+                }
                 return 0;
             }
             else
