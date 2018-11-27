@@ -23,8 +23,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   </options>
   <mappings>
     <tool lib="6" map="Button2" name="Menu Tool"/>
-    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
     <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
   </mappings>
   <toolbar>
     <tool lib="6" name="Poke Tool"/>
@@ -54,24 +54,26 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <wire from="(280,200)" to="(320,200)"/>
-    <wire from="(200,180)" to="(200,200)"/>
+    <wire from="(520,220)" to="(530,220)"/>
+    <wire from="(520,200)" to="(540,200)"/>
     <wire from="(310,240)" to="(390,240)"/>
     <wire from="(230,210)" to="(240,210)"/>
-    <wire from="(200,220)" to="(240,220)"/>
+    <wire from="(220,170)" to="(220,220)"/>
+    <wire from="(540,170)" to="(540,200)"/>
+    <wire from="(230,180)" to="(230,200)"/>
     <wire from="(440,200)" to="(480,200)"/>
+    <wire from="(220,170)" to="(540,170)"/>
     <wire from="(230,210)" to="(230,240)"/>
-    <wire from="(200,200)" to="(210,200)"/>
     <wire from="(360,220)" to="(400,220)"/>
+    <wire from="(220,220)" to="(240,220)"/>
     <wire from="(190,240)" to="(230,240)"/>
-    <wire from="(200,180)" to="(530,180)"/>
-    <wire from="(530,180)" to="(530,200)"/>
+    <wire from="(530,180)" to="(530,220)"/>
+    <wire from="(230,180)" to="(530,180)"/>
     <wire from="(390,210)" to="(390,240)"/>
     <wire from="(230,240)" to="(310,240)"/>
-    <wire from="(200,200)" to="(200,220)"/>
     <wire from="(390,240)" to="(470,240)"/>
     <wire from="(360,200)" to="(400,200)"/>
     <wire from="(310,210)" to="(320,210)"/>
-    <wire from="(520,200)" to="(530,200)"/>
     <wire from="(230,200)" to="(240,200)"/>
     <wire from="(440,220)" to="(480,220)"/>
     <wire from="(280,220)" to="(320,220)"/>
@@ -79,13 +81,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(310,210)" to="(310,240)"/>
     <wire from="(470,210)" to="(470,240)"/>
     <wire from="(390,210)" to="(400,210)"/>
-    <comp lib="0" loc="(190,240)" name="Clock"/>
-    <comp lib="1" loc="(230,200)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="4" loc="(280,200)" name="J-K Flip-Flop"/>
     <comp lib="4" loc="(440,200)" name="J-K Flip-Flop"/>
-    <comp lib="4" loc="(520,200)" name="J-K Flip-Flop"/>
     <comp lib="4" loc="(360,200)" name="J-K Flip-Flop"/>
+    <comp lib="4" loc="(520,200)" name="J-K Flip-Flop"/>
+    <comp lib="4" loc="(280,200)" name="J-K Flip-Flop"/>
+    <comp lib="0" loc="(190,240)" name="Clock"/>
   </circuit>
 </project>
