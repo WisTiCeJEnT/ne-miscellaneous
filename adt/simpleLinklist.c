@@ -39,7 +39,7 @@ int appendList(int newData)
 int main()
 {
     int inp;
-    scanf("%d",&)
+    scanf("%d",&inp);
     appendList(1);
     appendList(2);
     appendList(4);
