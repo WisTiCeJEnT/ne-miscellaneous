@@ -6,9 +6,9 @@ def poster(url, payload):
 
     response = requests.post(url, data=json.dumps(payload), headers=headers)
     print(response.text)
-    print(response.json)
+    print(response.json())
 
 def getter(url):
     response = requests.get(url)
     print(response.text)
-    print(response.json)
+    print(response.json())
